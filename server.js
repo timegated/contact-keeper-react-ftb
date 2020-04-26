@@ -6,6 +6,10 @@ app.get('/', (req, res) => {
     res.json({msg: 'Welcome to contactkeeper api...'})
 })
 
+// Init Middleware
+
+app.use(express.json({ extended: false }));
+
 // Connect DB
 
 connectDB();
