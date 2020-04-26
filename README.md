@@ -25,7 +25,7 @@
 * [] Ensure that state is separated out of the app with React's Context API in order to have components access state independently.
 
 #### Back
-
+* [X] Set up file/folder structure on back-end
 * [] Set up api routes that allow data to be sent from our front-end to our database.
 * [] Test api routes with Postman to ensure they work.
 * [] Using mongoose, create models for our database that accept only data within constraints.
