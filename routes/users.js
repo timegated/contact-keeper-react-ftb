@@ -12,9 +12,8 @@ const User = require('../models/User');
 
 
 // @route POST api/users
-// @desc  Register a user
+// @desc  Register a user. Alot of method chanining happening here.
 // @access PUBLIC
-// METHOD CHAIN CHOOCHOO
 
 router.post(
     '/',
