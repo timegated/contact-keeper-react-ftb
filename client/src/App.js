@@ -3,11 +3,13 @@ import Navbar from './components/Layout/Navbar';
 import Home from './components/Pages/Home';
 import About from './components/Pages/About';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ContactState from './context/contact/ContactState';
 import './App.css';
 
 const App = () => {
   return (
-    <Router>
+    <ContactState>
+       <Router>
        <Fragment>
         <Navbar />
         <div className="container">
@@ -18,7 +20,7 @@ const App = () => {
         </div>
       </Fragment>
     </Router>
-   
+    </ContactState>
   );
 }
 
