@@ -1,9 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+import ContactContext from '../../context/contact/contactContext';
 
 const ContactItem = ({ contact }) => {
-    const { id, name, email, phone, type } = contact;
+    const contactContext = useContext(ContactContext);
 
+    const { id, name, email, phone, type } = contact;
+    
     return (
         <div className="card bg-light">
             <h3 className="text-primary text-left">
