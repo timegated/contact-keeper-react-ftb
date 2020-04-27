@@ -63,7 +63,7 @@ router.post('/',
         }
     });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', auth, async (req, res) => {
     const { name, email, phone, type } = req.body;
 
     const contactFields = {

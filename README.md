@@ -26,6 +26,8 @@
 
 #### Back
 * [X] Set up file/folder structure on back-end
-* [] Set up api routes that allow data to be sent from our front-end to our database.
-* [] Test api routes with Postman to ensure they work.
-* [] Using mongoose, create models for our database that accept only data within constraints.
+* [X] Set up api routes that allow data to be sent from our front-end to our database.
+* [X] Test api routes with Postman to ensure they work.
+* [X] Using mongoose, create models for our database that accept only data within constraints.
+* [X] Set up basic authentication, password hashing, and account creation
+* [X] Set up protected routes that a logged-in user can access
