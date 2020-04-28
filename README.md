@@ -19,10 +19,11 @@
 
 #### Front
 
-* [] Set up client folder and project structure.
-* [] Use cra to bootstrap this application.
-* [] Create a UI/UX with React using separate components for each "piece" of the interface.
-* [] Ensure that state is separated out of the app with React's Context API in order to have components access state independently.
+* [X] Set up client folder and project structure.
+* [X] Use cra to bootstrap this application.
+* [X] Create a UI/UX with React using separate components for each "piece" of the interface.
+* [X] Ensure that state is separated out of the app with React's Context API in order to have components access state independently.
+* [X] Full crud operations on the front-end, create, update, delete, and filter.
 
 #### Back
 * [X] Set up file/folder structure on back-end
