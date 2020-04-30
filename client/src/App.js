@@ -4,6 +4,7 @@ import Home from './components/Pages/Home';
 import About from './components/Pages/About';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
+import Alerts from './components/Layout/Alerts';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ContactState from './context/contact/ContactState';
 import AuthState from './context/auth/AuthState';
@@ -18,7 +19,8 @@ const App = () => {
           <Router>
           <Fragment>
             <Navbar />
-            <div className="container">
+              <div className="container">
+                <Alerts />
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/about" component={About} />
