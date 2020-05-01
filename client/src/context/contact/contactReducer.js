@@ -1,11 +1,14 @@
 import {
     ADD_CONTACT,
     DELETE_CONTACT,
+    CLEAR_CONTACTS,
     SET_CURRENT,
+    CONTACT_ERROR,
     CLEAR_CURRENT,
     CLEAR_FILTER,
     UPDATE_CONTACT,
-    FILTER_CONTACTS
+    FILTER_CONTACTS,
+    GET_CONTACTS
 } from '../types';
 
 export default (state, action) => {
@@ -13,7 +16,14 @@ export default (state, action) => {
         case ADD_CONTACT:
             return {
                 ...state,
-                contacts: [...state.contacts, action.payload]
+                contacts: [...state.contacts, action.payload],
+                loading:false
+            };
+        case GET_CONTACTS:
+            return {
+                ...state,
+                contacts: action.payload,
+                loading: false
             };
         case UPDATE_CONTACT:
             return {
@@ -26,7 +36,16 @@ export default (state, action) => {
         case DELETE_CONTACT:
             return {
                 ...state,
-                contacts: state.contacts.filter(contact => contact.id !== action.payload)
+                contacts: state.contacts.filter(contact => contact._id !== action.payload),
+                loading: false
+            };
+        case CLEAR_CONTACTS:
+            return {
+                ...state,
+                contacts: null,
+                filtered: null,
+                error: null,
+                current: null
             };
         case FILTER_CONTACTS:
             return {
@@ -34,7 +53,8 @@ export default (state, action) => {
                 filtered: state.contacts.filter(contact => {
                     const regex = new RegExp(`${action.payload}`, 'gi');
                     return contact.name.match(regex) || contact.email.match(regex);
-                })
+                }),
+                loading: false
             };
         case SET_CURRENT:
             return {
@@ -50,6 +70,11 @@ export default (state, action) => {
             return {
                 ...state,
                 filtered: null
+            };
+        case CONTACT_ERROR:
+            return {
+                ...state,
+                error: action.payload
             };
         default:
             return state
