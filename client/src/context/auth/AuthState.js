@@ -30,14 +30,11 @@ const AuthState = props => {
 
     // Load User
     const loadUser = async () => {
-        // todo: load token into global headers
-        if (localStorage.token) {
-            setAuthToken(localStorage.token);
-        };
+        setAuthToken(localStorage.token);
 
         try {
             const res = await axios.get('/api/auth');
-
+            
             dispatch({
                 type: USER_LOADED,
                 payload: res.data
@@ -53,7 +50,7 @@ const AuthState = props => {
     const register = async formData => {
         const config = {
             headers: {
-                'Content-type': 'application/json'
+                'Content-type': 'application/json',
             }
         }
         try {
