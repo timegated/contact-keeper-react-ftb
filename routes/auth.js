@@ -30,6 +30,8 @@ router.get('/', auth, async (req, res) => {
 // @desc  Authenticating a user
 // @access PUBLIC
 
+// Accessed from the front-end when a user attempts to log in
+
 router.post('/',
 [
     check('email', 'Include a valid email').isEmail(),
@@ -57,10 +59,12 @@ router.post('/',
              }
          };
          // console.log(payload);
-
-         jwt.sign(payload, config.get('jwtSecret'), {
-             expiresIn: 3600000
-         }, (err, token) => {
+        //  jsonwebtoken method to sign the token, payload (user object) is passed in, and the jwtSecret is grabbed from the config object
+        jwt.sign(payload, config.get('jwtSecret'),
+            {
+                expiresIn: 3600000
+            },
+            (err, token) => {
              if (err) throw err;
              res.json({
                  token

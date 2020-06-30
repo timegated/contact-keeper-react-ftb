@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json({ extended: true }));
 
-// Connect DB
+// Connect MongoDB
 
 connectDB();
 
